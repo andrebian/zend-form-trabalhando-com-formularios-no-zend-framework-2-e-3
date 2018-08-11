@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="ZendSkeletonApplication Test Suite">
+            <directory>./module/Application/test</directory>
+        </testsuite>
+    </testsuites>
+
+    <!--Temos que adicionar um whitelist somente com o que queremos de report-->
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./module/Application/src</directory>
+        </whitelist>
+    </filter>
+
+    <!--E definir como será a saída-->
+    <logging>
+        <log type="coverage-html" target="./build/coverage-html" lowUpperBound="35" highLowerBound="75"/>
+    </logging>
+</phpunit>

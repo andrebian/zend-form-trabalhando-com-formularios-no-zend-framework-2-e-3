@@ -1,0 +1,135 @@
+<?php
+// recuperando o form enviado pelo controller
+$form = $this->form;
+
+// preparando o form
+$form->prepare();
+
+// abrindo a tag form <form>
+echo $this->form()->openTag($form);
+?>
+
+<div class="form-group">
+    <label><?php echo $form->get('text')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('text')); ?>
+
+    <?php if (isset($this->errorMessages['text'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['text'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('textarea')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('textarea')); ?>
+
+    <?php if (isset($this->errorMessages['textarea'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['textarea'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('number')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('number')); ?>
+
+    <?php if (isset($this->errorMessages['number'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['number'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('select')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('select')); ?>
+
+    <?php if (isset($this->errorMessages['select'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['select'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('checkbox')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('checkbox')); ?>
+
+    <?php if (isset($this->errorMessages['checkbox'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['checkbox'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('radio')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('radio')); ?>
+
+    <?php if (isset($this->errorMessages['radio'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['radio'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('password')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('password')); ?>
+
+    <?php if (isset($this->errorMessages['password'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['password'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('password_confirmation')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('password_confirmation')); ?>
+
+    <?php if (isset($this->errorMessages['password_confirmation'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['password_confirmation'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <label><?php echo $form->get('file')->getLabel(); ?></label>
+    <?php echo $this->formElement($form->get('file')); ?>
+
+    <?php if (isset($this->errorMessages['file'])) : ?>
+        <div class="error-messages" style="color: #f00;">
+            <?php foreach ($this->errorMessages['file'] as $message) : ?>
+                <?php echo $message; ?><br />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<div class="form-group">
+    <!--    Submit não possui label-->
+    <?php echo $this->formElement($form->get('submit')); ?>
+</div>
+
+<!--Por fim fechando a tag form </form>-->
+<?php echo $this->form()->closeTag();
